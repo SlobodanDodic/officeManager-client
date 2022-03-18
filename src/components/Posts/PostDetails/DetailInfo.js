@@ -1,72 +1,65 @@
 import React from "react";
 import useStyles from "./styles";
 import Grid from "@mui/material/Grid";
+import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 
-const DetailInfo = ({ avatar, title, item, itemDebt }) => {
+const DetailInfo = ({ title, item, itemDebt }) => {
   const classes = useStyles();
 
   return (
-    <Grid container className={classes.boxInfo}>
-      <Grid item xs={12}>
+    <Grid item xs="auto" className={classes.boxInfoGrid}>
+      <Paper
+        style={{
+          padding: "15px",
+          borderRadius: "8px",
+        }}
+      >
         <Typography
           variant="h6"
           style={{
-            color: "#981f2e",
-            textDecoration: "underline",
+            color: "#fb7c1b",
             marginBottom: "15px",
+            letterSpacing: "3px",
+            filter: "drop-shadow(2px 2px 3px grey)",
+            backgroundColor: "#00243a",
+            borderRadius: "5px",
+            textAlign: "center",
+            padding: "5px",
+            border: "1px solid #fb7c1b",
           }}
         >
           {title}
         </Typography>
-      </Grid>
-      <Grid container className={classes.innerGrid}>
-        <Grid item xs={6}>
-          <Typography
-            variant="subtitle2"
-            style={{
-              color: "#981f2e",
-              textDecoration: "underline",
-              marginBottom: "5px",
-            }}
-          >
-            Debt:
+        <Typography
+          variant="subtitle2"
+          style={{
+            color: "#981f2e",
+            textDecoration: "underline",
+            marginBottom: "5px",
+          }}
+        >
+          Debt:
+        </Typography>
+
+        <Typography variant="subtitle2">{itemDebt}</Typography>
+
+        <Typography
+          variant="subtitle2"
+          style={{
+            color: "#981f2e",
+            textDecoration: "underline",
+            marginBottom: "5px",
+          }}
+        >
+          Users:
+        </Typography>
+        {item?.map((user, id) => (
+          <Typography variant="subtitle2" key={id}>
+            {user}
           </Typography>
-        </Grid>
-
-        <Grid item xs={6}>
-          <Typography
-            variant="subtitle2"
-            style={{
-              color: "#981f2e",
-              textDecoration: "underline",
-              marginBottom: "5px",
-            }}
-          >
-            Users:
-          </Typography>
-        </Grid>
-
-        <Grid item xs={6}>
-          <Typography variant="subtitle2">{itemDebt}</Typography>
-          <img
-            style={{
-              width: "105px",
-              filter: "drop-shadow(1px 1px 17px grey)",
-            }}
-            src={avatar}
-            alt={title}
-          />
-        </Grid>
-
-        <Grid item xs={6}>
-          {item?.map((user, id) => (
-            <Typography variant="subtitle2" key={id}>
-              {user}
-            </Typography>
-          ))}
-        </Grid>
-      </Grid>
+        ))}
+      </Paper>
     </Grid>
   );
 };

@@ -116,8 +116,6 @@ const Post = ({ post, setCurrentId }) => {
         )}
       </StyledTableCell>
     </StyledTableRow>
-
-    //{post.tags.map((tag) => `#${tag} `)}
   );
 };
 

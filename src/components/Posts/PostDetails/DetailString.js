@@ -18,9 +18,9 @@ const DetailString = ({ item, itemTwo, title, avatar }) => {
           <Typography className={classes.typo}>
             {item === 0
               ? "No Users"
-              : item / 20 === 1
-              ? `${item / 20} User`
-              : `${item / 20} Users`}
+              : item / 10 === 1
+              ? `${item / 10} User`
+              : `${item / 10} Users`}
           </Typography>
         ) : (
           <Typography className={classes.typo}>

@@ -13,8 +13,7 @@ import dpFitpass from "../../../assets/dpFitpass.png";
 import dpHealth from "../../../assets/dpHealth.png";
 import dpBank from "../../../assets/dpBank.png";
 import dpTests from "../../../assets/dpTests.png";
-import dpUsersH from "../../../assets/dpUsersH.png";
-import dpUsersFit from "../../../assets/dpUsersFit.png";
+import dpInfo from "../../../assets/dpInfo.png";
 
 import useStyles from "./styles";
 import DetailString from "./DetailString";
@@ -86,19 +85,31 @@ const PostDetails = () => {
 
       <Typography className={classes.gridHeading}>Additional info</Typography>
 
-      <Grid container spacing={2} alignItems="center">
+      <Grid
+        container
+        spacing={2}
+        alignItems="center"
+        className={classes.boxInfo}
+      >
         <DetailInfo
           title="Health Care"
           item={post?.healthUsers?.map((healthUser) => `🆔 ${healthUser} `)}
           itemDebt={post.debtHealth}
-          avatar={dpUsersH}
         />
 
         <DetailInfo
           title="Fitpass"
           item={post?.fitpassUsers?.map((fitpassUser) => `🆔 ${fitpassUser} `)}
           itemDebt={post.debtFitpass}
-          avatar={dpUsersFit}
+        />
+        <img
+          style={{
+            width: "255px",
+            filter: "drop-shadow(1px 1px 17px grey)",
+            margin: "0 auto",
+          }}
+          src={dpInfo}
+          alt="dpInfo"
         />
       </Grid>
 

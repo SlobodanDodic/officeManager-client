@@ -156,7 +156,32 @@ export default makeStyles(() => ({
   // Detail Info
 
   boxInfo: {
-    margin: "10px 0px !important",
+    margin: "0 auto",
     textAlign: "center",
+    maxWidth: "605px",
+    display: "flex",
+    alignItems: "flex-start",
+    filter: "drop-shadow(5px 5px 11px grey)",
+    border: "5px double #d0d0d0",
+    padding: "5px",
+    "&:before": {
+      position: "absolute",
+      content: `''`,
+      left: "0px",
+      top: "-35px",
+      width: "100%",
+      height: "120%",
+      clipPath: "polygon(41% 90%, 0% 0%, 100% 50%)",
+      backgroundColor: "#00243a",
+      zIndex: "-1",
+    },
+  },
+  boxInfoGrid: {
+    textAlign: "left",
+    minWidth: "285px",
+    margin: "5px !important",
+    backgroundColor: "#f5f5f55e",
+    filter: "drop-shadow(2px 4px 6px black)",
+    borderRadius: "8px",
   },
 }));
